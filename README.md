@@ -1,105 +1,117 @@
-# LibraManager
+# LibraManager – System zarządzania biblioteką
 
-LibraManager is a layered Python/Flask library-management project.  The
-business layer works through services and repositories over SQLite; HTTP and
-CLI controllers must call those services rather than modifying models directly.
+**Polski** | [English](README.en.md)
 
-## Current implementation status
+![Python](https://img.shields.io/badge/Python-3.14-3776AB) ![Flask](https://img.shields.io/badge/Framework-Flask-000000) ![SQLite](https://img.shields.io/badge/Database-SQLite-003B57) ![Tests](https://img.shields.io/badge/Tests-1750_passed-brightgreen) ![Coverage](https://img.shields.io/badge/Services_coverage-97%25-brightgreen) ![License](https://img.shields.io/badge/License-All_rights_reserved-red)
 
-The service layer contains all fifteen planned services.  The most recently
-completed modules are `PaymentService` and `ReportService`:
+## O projekcie
 
-- Payments use `Decimal`, validate CASH/CARD methods, prevent overpayments and
-  update a fine with an optimistic, conditional database update.
-- A payment, its fine update, and audit records are written in one transaction.
-- Reader payment history is isolated by server-side authorization checks.
-- Reports provide dashboard aggregates, loan/reservation/catalogue/financial
-  statistics, CSV output, and formula-injection-safe CSV cells.
+LibraManager to system zarządzania biblioteką opracowany w ramach przedmiotu Inżynieria oprogramowania. Łączy aplikację internetową WWW oraz interaktywny interfejs konsolowy CLI, korzystające ze wspólnej warstwy logiki biznesowej i bazy danych.
 
-The application includes an interactive CLI and a server-rendered Flask panel.
-Both interfaces call the same service layer and database.  The HTTP panel has
-separate administrator, librarian and reader dashboards, catalogue, readers,
-circulation, reservations, finance, reports, settings and audit modules.
+**Autor: Mateusz Stanikowski**  
+**Data utworzenia: 22.11.2026**
 
-## Installation
+## Funkcjonalności
 
-Use Python 3.14 or a compatible Python version:
+- Zarządzanie użytkownikami, czytelnikami i uprawnieniami (administrator, bibliotekarz, czytelnik).
+- Katalog książek, autorów, kategorii i egzemplarzy.
+- Wypożyczenia, zwroty, rezerwacje z kolejką FIFO.
+- Naliczanie kar i rejestrowanie płatności gotówką lub kartą (bez integracji z operatorem płatności).
+- Raporty, statystyki, eksport CSV, ustawienia i dziennik audytu.
+- Uwierzytelnianie, haszowanie haseł, kontrola dostępu i ochrona CSRF.
 
-```powershell
-py -3.14 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-```
-
-Set a development secret in `.env` (do not commit a production secret):
+## Architektura
 
 ```text
-SECRET_KEY=replace-with-a-long-random-development-secret
+WWW / CLI
+    ↓
+Kontrolery
+    ↓
+Serwisy biznesowe
+    ↓
+Repozytoria
+    ↓
+SQLAlchemy / SQLite
 ```
 
-The standard local database path is `database/library.db`.  Tests use isolated
-in-memory or temporary SQLite databases and do not reset this database.
+System wykorzystuje Python, Flask, Flask-SQLAlchemy, SQLite, HTML, CSS, JavaScript oraz pytest. Warstwa biznesowa obejmuje 15 serwisów, a model danych 13 tabel. Operacje finansowe wykorzystują Decimal i transakcje, zapobiegają nadpłatom oraz stosują warunkową aktualizację stanu kary.
 
-## Running the web application
+![Diagram komponentów](docs/diagrams/05_component_diagram.png)
+
+## Interfejs użytkownika
+
+![Panel czytelnika](docs/screenshots/acceptance/reader-dashboard.png)
+
+## Instalacja (Windows PowerShell)
+
+Wymagania: Git, Python 3.14 oraz dostęp do repozytorium.
 
 ```powershell
-.\.venv\Scripts\python.exe run.py
+git clone https://github.com/TheMatX7/LibraManager.git
+cd LibraManager
+py -3.14 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+Copy-Item .env.example .env
+$key = .\.venv\Scripts\python.exe -c "import secrets; print(secrets.token_hex(32))"
+"SECRET_KEY=$key" | Set-Content .env -Encoding ASCII
 ```
 
-Then check `http://127.0.0.1:5000/health`.
+### Dane demonstracyjne
 
-Open `http://127.0.0.1:5000/` to sign in. Do not use Flask's development server
-as a production deployment server; enable HTTPS and set
-`SESSION_COOKIE_SECURE=true` when deploying behind a TLS reverse proxy.
-
-## Running the CLI
-
-```powershell
-.\.venv\Scripts\python.exe run.py --cli
-```
-
-The CLI offers role-specific options and delegates each operation to the same
-services used by the web interface.
-
-## Demonstration data
-
-Only for a new, empty database:
+Na nowej, pustej bazie uruchom:
 
 ```powershell
 .\.venv\Scripts\python.exe run.py --seed-demo
 ```
 
-This refuses to run when any user already exists. It prints newly generated
-one-time demo passwords only to the local console; no static credential is
-stored in the source code.
+Generator wypisze losowo wygenerowane hasła demonstracyjne w lokalnej konsoli i odmówi ponownego uruchomienia, gdy istnieją już użytkownicy. Nie udostępniaj tych haseł. Domyślna baza znajduje się w `database/library.db`.
 
-## Tests
+### WWW
 
-Run the complete installed test suite:
+```powershell
+.\.venv\Scripts\python.exe run.py
+```
+
+Otwórz [http://127.0.0.1:5000/](http://127.0.0.1:5000/). Kontrola stanu: `/health`.
+
+### CLI
+
+```powershell
+.\.venv\Scripts\python.exe run.py --cli
+```
+
+## Testowanie
+
+| Wskaźnik | Ostatni zgłoszony wynik |
+|---|---:|
+| Zaliczone testy | 1750 |
+| Pokrycie warstwy services | 97% |
+| FineService | 100% |
+| PaymentService | 98% |
+| ReportService | 98% |
+
+Wyniki pochodzą z raportu odbioru technicznego, sprzed końcowego odtworzenia CSS; nie stanowią wyniku nowego uruchomienia testów po publikacji.
 
 ```powershell
 .\.venv\Scripts\python.exe -m pytest -q
+.\.venv\Scripts\python.exe -m pytest --cov=app/services --cov-branch --cov-report=term-missing
 ```
 
-The financial/reporting regression subset is:
+## Dokumentacja
 
-```powershell
-.\.venv\Scripts\python.exe -m pytest `
-  tests/test_payment_service.py `
-  tests/test_payment_repository.py `
-  tests/test_report_service.py -q
-```
+- [Część I – projektowanie](docs/LibraManager_dokumentacja_techniczna.docx)
+- [Część II – implementacja i testowanie](docs/LibraManager_Dokumentacja_czesc_II.docx)
+- [Diagramy UML i ERD](docs/diagrams/)
+- [Raport testów](docs/TEST_REPORT.md) · [Raport odbioru](docs/ACCEPTANCE_REPORT.md)
+- [Instrukcja użytkownika](docs/USER_GUIDE.md) · [Przewodnik prezentacji](docs/PRESENTATION_GUIDE.md)
+- [Historia rozwoju](docs/DEVELOPMENT_PROGRESS.md) · [Bezpieczeństwo](docs/SECURITY.md)
 
-To regenerate coverage and JUnit reports, use:
+## Bezpieczeństwo i wdrożenie
 
-```powershell
-.\.venv\Scripts\python.exe -m pytest --cov=app/services --cov-branch `
-  --cov-report=html:docs/coverage/final `
-  --cov-report=xml:docs/coverage/final/coverage.xml `
-  --junitxml=docs/test_reports/final.xml
-```
+Nie publikuj pliku `.env`, lokalnych baz danych ani haseł. Serwer deweloperski Flask nie jest przeznaczony do produkcji. W środowisku produkcyjnym stosuj serwer WSGI, HTTPS i `SESSION_COOKIE_SECURE=true`.
 
-See [development progress](docs/DEVELOPMENT_PROGRESS.md) and the
-[acceptance report](docs/ACCEPTANCE_REPORT.md) for verified results and
-constraints. Read [security notes](docs/SECURITY.md) before deployment, and
-use the [user guide](docs/USER_GUIDE.md) together with the
-[presentation guide](docs/PRESENTATION_GUIDE.md) during a presentation.
+## Prawa autorskie
+
+© 2026 Mateusz Stanikowski. Wszelkie prawa zastrzeżone.
+
+Kod i dokumentacja w zakresie praw przysługujących autorowi nie są udostępniane na licencji open source. Szczegóły: [LICENSE](LICENSE). Zależności i materiały osób trzecich podlegają własnym licencjom.
