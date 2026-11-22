@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xmi:XMI xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1">
+  <uml:Model xmi:id="lm_activity_model" name="LibraManager - Activities">
+    <packagedElement xmi:id="lm_borrow" xmi:type="uml:Activity" name="Wypozyczanie ksiazki">
+      <node xmi:id="lm_b_start" xmi:type="uml:InitialNode" outgoing="lm_b_e0" />
+      <node xmi:id="lm_b_identify" xmi:type="uml:OpaqueAction" name="Identyfikacja czytelnika" incoming="lm_b_e0" outgoing="lm_b_e1" />
+      <node xmi:id="lm_b_select" xmi:type="uml:OpaqueAction" name="Wybor egzemplarza" incoming="lm_b_e1" outgoing="lm_b_e2" />
+      <node xmi:id="lm_b_active" xmi:type="uml:DecisionNode" name="Konto aktywne?" incoming="lm_b_e2" outgoing="lm_b_e3 lm_b_e10" />
+      <node xmi:id="lm_b_limit" xmi:type="uml:DecisionNode" name="Limit nieprzekroczony?" incoming="lm_b_e3" outgoing="lm_b_e4 lm_b_e11" />
+      <node xmi:id="lm_b_available" xmi:type="uml:DecisionNode" name="Egzemplarz dostepny?" incoming="lm_b_e4" outgoing="lm_b_e5 lm_b_e12" />
+      <node xmi:id="lm_b_reserve" xmi:type="uml:DecisionNode" name="Rezerwacja nie blokuje?" incoming="lm_b_e5" outgoing="lm_b_e6 lm_b_e13" />
+      <node xmi:id="lm_b_err1" xmi:type="uml:OpaqueAction" name="Konto nieaktywne" incoming="lm_b_e10" outgoing="lm_b_e14" />
+      <node xmi:id="lm_b_err2" xmi:type="uml:OpaqueAction" name="Osiagnieto limit" incoming="lm_b_e11" outgoing="lm_b_e15" />
+      <node xmi:id="lm_b_err3" xmi:type="uml:OpaqueAction" name="Brak dostepnosci" incoming="lm_b_e12" outgoing="lm_b_e16" />
+      <node xmi:id="lm_b_err4" xmi:type="uml:OpaqueAction" name="Blokada rezerwacji" incoming="lm_b_e13" outgoing="lm_b_e17" />
+      <node xmi:id="lm_b_create" xmi:type="uml:OpaqueAction" name="Utworzenie wypozyczenia" incoming="lm_b_e6" outgoing="lm_b_e7" />
+      <node xmi:id="lm_b_due" xmi:type="uml:OpaqueAction" name="Ustalenie terminu zwrotu" incoming="lm_b_e7" outgoing="lm_b_e8" />
+      <node xmi:id="lm_b_save" xmi:type="uml:OpaqueAction" name="Aktualizacja statusu i zapis" incoming="lm_b_e8" outgoing="lm_b_e9" />
+      <node xmi:id="lm_b_end" xmi:type="uml:ActivityFinalNode" incoming="lm_b_e9 lm_b_e14 lm_b_e15 lm_b_e16 lm_b_e17" />
+      <edge xmi:id="lm_b_e0" xmi:type="uml:ControlFlow" source="lm_b_start" target="lm_b_identify" />
+      <edge xmi:id="lm_b_e1" xmi:type="uml:ControlFlow" source="lm_b_identify" target="lm_b_select" />
+      <edge xmi:id="lm_b_e2" xmi:type="uml:ControlFlow" source="lm_b_select" target="lm_b_active" />
+      <edge xmi:id="lm_b_e3" xmi:type="uml:ControlFlow" source="lm_b_active" target="lm_b_limit">
+        <guard xmi:id="lm_b_g3" xmi:type="uml:LiteralString" value="Tak" />
+      </edge>
+      <edge xmi:id="lm_b_e4" xmi:type="uml:ControlFlow" source="lm_b_limit" target="lm_b_available">
+        <guard xmi:id="lm_b_g4" xmi:type="uml:LiteralString" value="Tak" />
+      </edge>
+      <edge xmi:id="lm_b_e5" xmi:type="uml:ControlFlow" source="lm_b_available" target="lm_b_reserve">
+        <guard xmi:id="lm_b_g5" xmi:type="uml:LiteralString" value="Tak" />
+      </edge>
+      <edge xmi:id="lm_b_e6" xmi:type="uml:ControlFlow" source="lm_b_reserve" target="lm_b_create">
+        <guard xmi:id="lm_b_g6" xmi:type="uml:LiteralString" value="Tak" />
+      </edge>
+      <edge xmi:id="lm_b_e7" xmi:type="uml:ControlFlow" source="lm_b_create" target="lm_b_due" />
+      <edge xmi:id="lm_b_e8" xmi:type="uml:ControlFlow" source="lm_b_due" target="lm_b_save" />
+      <edge xmi:id="lm_b_e9" xmi:type="uml:ControlFlow" source="lm_b_save" target="lm_b_end" />
+      <edge xmi:id="lm_b_e10" xmi:type="uml:ControlFlow" source="lm_b_active" target="lm_b_err1">
+        <guard xmi:id="lm_b_g10" xmi:type="uml:LiteralString" value="Nie" />
+      </edge>
+      <edge xmi:id="lm_b_e11" xmi:type="uml:ControlFlow" source="lm_b_limit" target="lm_b_err2">
+        <guard xmi:id="lm_b_g11" xmi:type="uml:LiteralString" value="Nie" />
+      </edge>
+      <edge xmi:id="lm_b_e12" xmi:type="uml:ControlFlow" source="lm_b_available" target="lm_b_err3">
+        <guard xmi:id="lm_b_g12" xmi:type="uml:LiteralString" value="Nie" />
+      </edge>
+      <edge xmi:id="lm_b_e13" xmi:type="uml:ControlFlow" source="lm_b_reserve" target="lm_b_err4">
+        <guard xmi:id="lm_b_g13" xmi:type="uml:LiteralString" value="Nie" />
+      </edge>
+      <edge xmi:id="lm_b_e14" xmi:type="uml:ControlFlow" source="lm_b_err1" target="lm_b_end" />
+      <edge xmi:id="lm_b_e15" xmi:type="uml:ControlFlow" source="lm_b_err2" target="lm_b_end" />
+      <edge xmi:id="lm_b_e16" xmi:type="uml:ControlFlow" source="lm_b_err3" target="lm_b_end" />
+      <edge xmi:id="lm_b_e17" xmi:type="uml:ControlFlow" source="lm_b_err4" target="lm_b_end" />
+    </packagedElement>
+  </uml:Model>
+</xmi:XMI>

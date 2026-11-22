@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xmi:XMI xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1">
+  <uml:Model xmi:id="lm_uc_model" name="LibraManager Use Cases">
+    <packagedElement xmi:id="lm_uc_package" xmi:type="uml:Package" name="LibraManager - Use Cases">
+      <packagedElement xmi:id="lm_actor_0" xmi:type="uml:Actor" name="Administrator" />
+      <packagedElement xmi:id="lm_actor_1" xmi:type="uml:Actor" name="Bibliotekarz" />
+      <packagedElement xmi:id="lm_actor_2" xmi:type="uml:Actor" name="Czytelnik" />
+      <packagedElement xmi:id="lm_uc_0" xmi:type="uml:UseCase" name="Logowanie" />
+      <packagedElement xmi:id="lm_uc_1" xmi:type="uml:UseCase" name="Wylogowanie" />
+      <packagedElement xmi:id="lm_uc_2" xmi:type="uml:UseCase" name="Wyszukiwanie książek" />
+      <packagedElement xmi:id="lm_uc_3" xmi:type="uml:UseCase" name="Sprawdzanie dostępności" />
+      <packagedElement xmi:id="lm_uc_4" xmi:type="uml:UseCase" name="Zarządzanie książkami" />
+      <packagedElement xmi:id="lm_uc_5" xmi:type="uml:UseCase" name="Zarządzanie egzemplarzami" />
+      <packagedElement xmi:id="lm_uc_6" xmi:type="uml:UseCase" name="Zarządzanie czytelnikami" />
+      <packagedElement xmi:id="lm_uc_7" xmi:type="uml:UseCase" name="Rejestrowanie wypożyczeń" />
+      <packagedElement xmi:id="lm_uc_8" xmi:type="uml:UseCase" name="Rejestrowanie zwrotów" />
+      <packagedElement xmi:id="lm_uc_9" xmi:type="uml:UseCase" name="Rezerwowanie książek" />
+      <packagedElement xmi:id="lm_uc_10" xmi:type="uml:UseCase" name="Anulowanie własnej rezerwacji" />
+      <packagedElement xmi:id="lm_uc_11" xmi:type="uml:UseCase" name="Obsługa rezerwacji" />
+      <packagedElement xmi:id="lm_uc_12" xmi:type="uml:UseCase" name="Obsługa kar" />
+      <packagedElement xmi:id="lm_uc_13" xmi:type="uml:UseCase" name="Rejestrowanie płatności" />
+      <packagedElement xmi:id="lm_uc_14" xmi:type="uml:UseCase" name="Przeglądanie własnych wypożyczeń" />
+      <packagedElement xmi:id="lm_uc_15" xmi:type="uml:UseCase" name="Sprawdzanie własnych kar" />
+      <packagedElement xmi:id="lm_uc_16" xmi:type="uml:UseCase" name="Generowanie raportów" />
+      <packagedElement xmi:id="lm_uc_17" xmi:type="uml:UseCase" name="Zarządzanie kontami" />
+      <packagedElement xmi:id="lm_uc_18" xmi:type="uml:UseCase" name="Konfiguracja systemu" />
+      <packagedElement xmi:id="lm_uc_19" xmi:type="uml:UseCase" name="Przeglądanie dziennika operacji" />
+      <packagedElement xmi:id="lm_assoc_0_0" xmi:type="uml:Association" memberEnd="lm_assoc_0_0_a lm_assoc_0_0_b">
+        <ownedEnd xmi:id="lm_assoc_0_0_a" xmi:type="uml:Property" type="lm_actor_0" association="lm_assoc_0_0" />
+        <ownedEnd xmi:id="lm_assoc_0_0_b" xmi:type="uml:Property" type="lm_uc_0" association="lm_assoc_0_0" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_0_1" xmi:type="uml:Association" memberEnd="lm_assoc_0_1_a lm_assoc_0_1_b">
+        <ownedEnd xmi:id="lm_assoc_0_1_a" xmi:type="uml:Property" type="lm_actor_1" association="lm_assoc_0_1" />
+        <ownedEnd xmi:id="lm_assoc_0_1_b" xmi:type="uml:Property" type="lm_uc_0" association="lm_assoc_0_1" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_0_2" xmi:type="uml:Association" memberEnd="lm_assoc_0_2_a lm_assoc_0_2_b">
+        <ownedEnd xmi:id="lm_assoc_0_2_a" xmi:type="uml:Property" type="lm_actor_2" association="lm_assoc_0_2" />
+        <ownedEnd xmi:id="lm_assoc_0_2_b" xmi:type="uml:Property" type="lm_uc_0" association="lm_assoc_0_2" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_1_0" xmi:type="uml:Association" memberEnd="lm_assoc_1_0_a lm_assoc_1_0_b">
+        <ownedEnd xmi:id="lm_assoc_1_0_a" xmi:type="uml:Property" type="lm_actor_0" association="lm_assoc_1_0" />
+        <ownedEnd xmi:id="lm_assoc_1_0_b" xmi:type="uml:Property" type="lm_uc_1" association="lm_assoc_1_0" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_1_1" xmi:type="uml:Association" memberEnd="lm_assoc_1_1_a lm_assoc_1_1_b">
+        <ownedEnd xmi:id="lm_assoc_1_1_a" xmi:type="uml:Property" type="lm_actor_1" association="lm_assoc_1_1" />
+        <ownedEnd xmi:id="lm_assoc_1_1_b" xmi:type="uml:Property" type="lm_uc_1" association="lm_assoc_1_1" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_1_2" xmi:type="uml:Association" memberEnd="lm_assoc_1_2_a lm_assoc_1_2_b">
+        <ownedEnd xmi:id="lm_assoc_1_2_a" xmi:type="uml:Property" type="lm_actor_2" association="lm_assoc_1_2" />
+        <ownedEnd xmi:id="lm_assoc_1_2_b" xmi:type="uml:Property" type="lm_uc_1" association="lm_assoc_1_2" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_2_0" xmi:type="uml:Association" memberEnd="lm_assoc_2_0_a lm_assoc_2_0_b">
+        <ownedEnd xmi:id="lm_assoc_2_0_a" xmi:type="uml:Property" type="lm_actor_0" association="lm_assoc_2_0" />
+        <ownedEnd xmi:id="lm_assoc_2_0_b" xmi:type="uml:Property" type="lm_uc_2" association="lm_assoc_2_0" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_2_1" xmi:type="uml:Association" memberEnd="lm_assoc_2_1_a lm_assoc_2_1_b">
+        <ownedEnd xmi:id="lm_assoc_2_1_a" xmi:type="uml:Property" type="lm_actor_1" association="lm_assoc_2_1" />
+        <ownedEnd xmi:id="lm_assoc_2_1_b" xmi:type="uml:Property" type="lm_uc_2" association="lm_assoc_2_1" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_2_2" xmi:type="uml:Association" memberEnd="lm_assoc_2_2_a lm_assoc_2_2_b">
+        <ownedEnd xmi:id="lm_assoc_2_2_a" xmi:type="uml:Property" type="lm_actor_2" association="lm_assoc_2_2" />
+        <ownedEnd xmi:id="lm_assoc_2_2_b" xmi:type="uml:Property" type="lm_uc_2" association="lm_assoc_2_2" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_3_0" xmi:type="uml:Association" memberEnd="lm_assoc_3_0_a lm_assoc_3_0_b">
+        <ownedEnd xmi:id="lm_assoc_3_0_a" xmi:type="uml:Property" type="lm_actor_0" association="lm_assoc_3_0" />
+        <ownedEnd xmi:id="lm_assoc_3_0_b" xmi:type="uml:Property" type="lm_uc_3" association="lm_assoc_3_0" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_3_1" xmi:type="uml:Association" memberEnd="lm_assoc_3_1_a lm_assoc_3_1_b">
+        <ownedEnd xmi:id="lm_assoc_3_1_a" xmi:type="uml:Property" type="lm_actor_1" association="lm_assoc_3_1" />
+        <ownedEnd xmi:id="lm_assoc_3_1_b" xmi:type="uml:Property" type="lm_uc_3" association="lm_assoc_3_1" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_3_2" xmi:type="uml:Association" memberEnd="lm_assoc_3_2_a lm_assoc_3_2_b">
+        <ownedEnd xmi:id="lm_assoc_3_2_a" xmi:type="uml:Property" type="lm_actor_2" association="lm_assoc_3_2" />
+        <ownedEnd xmi:id="lm_assoc_3_2_b" xmi:type="uml:Property" type="lm_uc_3" association="lm_assoc_3_2" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_4_1" xmi:type="uml:Association" memberEnd="lm_assoc_4_1_a lm_assoc_4_1_b">
+        <ownedEnd xmi:id="lm_assoc_4_1_a" xmi:type="uml:Property" type="lm_actor_1" association="lm_assoc_4_1" />
+        <ownedEnd xmi:id="lm_assoc_4_1_b" xmi:type="uml:Property" type="lm_uc_4" association="lm_assoc_4_1" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_5_1" xmi:type="uml:Association" memberEnd="lm_assoc_5_1_a lm_assoc_5_1_b">
+        <ownedEnd xmi:id="lm_assoc_5_1_a" xmi:type="uml:Property" type="lm_actor_1" association="lm_assoc_5_1" />
+        <ownedEnd xmi:id="lm_assoc_5_1_b" xmi:type="uml:Property" type="lm_uc_5" association="lm_assoc_5_1" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_6_1" xmi:type="uml:Association" memberEnd="lm_assoc_6_1_a lm_assoc_6_1_b">
+        <ownedEnd xmi:id="lm_assoc_6_1_a" xmi:type="uml:Property" type="lm_actor_1" association="lm_assoc_6_1" />
+        <ownedEnd xmi:id="lm_assoc_6_1_b" xmi:type="uml:Property" type="lm_uc_6" association="lm_assoc_6_1" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_7_1" xmi:type="uml:Association" memberEnd="lm_assoc_7_1_a lm_assoc_7_1_b">
+        <ownedEnd xmi:id="lm_assoc_7_1_a" xmi:type="uml:Property" type="lm_actor_1" association="lm_assoc_7_1" />
+        <ownedEnd xmi:id="lm_assoc_7_1_b" xmi:type="uml:Property" type="lm_uc_7" association="lm_assoc_7_1" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_8_1" xmi:type="uml:Association" memberEnd="lm_assoc_8_1_a lm_assoc_8_1_b">
+        <ownedEnd xmi:id="lm_assoc_8_1_a" xmi:type="uml:Property" type="lm_actor_1" association="lm_assoc_8_1" />
+        <ownedEnd xmi:id="lm_assoc_8_1_b" xmi:type="uml:Property" type="lm_uc_8" association="lm_assoc_8_1" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_9_2" xmi:type="uml:Association" memberEnd="lm_assoc_9_2_a lm_assoc_9_2_b">
+        <ownedEnd xmi:id="lm_assoc_9_2_a" xmi:type="uml:Property" type="lm_actor_2" association="lm_assoc_9_2" />
+        <ownedEnd xmi:id="lm_assoc_9_2_b" xmi:type="uml:Property" type="lm_uc_9" association="lm_assoc_9_2" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_10_2" xmi:type="uml:Association" memberEnd="lm_assoc_10_2_a lm_assoc_10_2_b">
+        <ownedEnd xmi:id="lm_assoc_10_2_a" xmi:type="uml:Property" type="lm_actor_2" association="lm_assoc_10_2" />
+        <ownedEnd xmi:id="lm_assoc_10_2_b" xmi:type="uml:Property" type="lm_uc_10" association="lm_assoc_10_2" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_11_1" xmi:type="uml:Association" memberEnd="lm_assoc_11_1_a lm_assoc_11_1_b">
+        <ownedEnd xmi:id="lm_assoc_11_1_a" xmi:type="uml:Property" type="lm_actor_1" association="lm_assoc_11_1" />
+        <ownedEnd xmi:id="lm_assoc_11_1_b" xmi:type="uml:Property" type="lm_uc_11" association="lm_assoc_11_1" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_12_1" xmi:type="uml:Association" memberEnd="lm_assoc_12_1_a lm_assoc_12_1_b">
+        <ownedEnd xmi:id="lm_assoc_12_1_a" xmi:type="uml:Property" type="lm_actor_1" association="lm_assoc_12_1" />
+        <ownedEnd xmi:id="lm_assoc_12_1_b" xmi:type="uml:Property" type="lm_uc_12" association="lm_assoc_12_1" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_13_1" xmi:type="uml:Association" memberEnd="lm_assoc_13_1_a lm_assoc_13_1_b">
+        <ownedEnd xmi:id="lm_assoc_13_1_a" xmi:type="uml:Property" type="lm_actor_1" association="lm_assoc_13_1" />
+        <ownedEnd xmi:id="lm_assoc_13_1_b" xmi:type="uml:Property" type="lm_uc_13" association="lm_assoc_13_1" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_14_2" xmi:type="uml:Association" memberEnd="lm_assoc_14_2_a lm_assoc_14_2_b">
+        <ownedEnd xmi:id="lm_assoc_14_2_a" xmi:type="uml:Property" type="lm_actor_2" association="lm_assoc_14_2" />
+        <ownedEnd xmi:id="lm_assoc_14_2_b" xmi:type="uml:Property" type="lm_uc_14" association="lm_assoc_14_2" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_15_2" xmi:type="uml:Association" memberEnd="lm_assoc_15_2_a lm_assoc_15_2_b">
+        <ownedEnd xmi:id="lm_assoc_15_2_a" xmi:type="uml:Property" type="lm_actor_2" association="lm_assoc_15_2" />
+        <ownedEnd xmi:id="lm_assoc_15_2_b" xmi:type="uml:Property" type="lm_uc_15" association="lm_assoc_15_2" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_16_0" xmi:type="uml:Association" memberEnd="lm_assoc_16_0_a lm_assoc_16_0_b">
+        <ownedEnd xmi:id="lm_assoc_16_0_a" xmi:type="uml:Property" type="lm_actor_0" association="lm_assoc_16_0" />
+        <ownedEnd xmi:id="lm_assoc_16_0_b" xmi:type="uml:Property" type="lm_uc_16" association="lm_assoc_16_0" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_16_1" xmi:type="uml:Association" memberEnd="lm_assoc_16_1_a lm_assoc_16_1_b">
+        <ownedEnd xmi:id="lm_assoc_16_1_a" xmi:type="uml:Property" type="lm_actor_1" association="lm_assoc_16_1" />
+        <ownedEnd xmi:id="lm_assoc_16_1_b" xmi:type="uml:Property" type="lm_uc_16" association="lm_assoc_16_1" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_17_0" xmi:type="uml:Association" memberEnd="lm_assoc_17_0_a lm_assoc_17_0_b">
+        <ownedEnd xmi:id="lm_assoc_17_0_a" xmi:type="uml:Property" type="lm_actor_0" association="lm_assoc_17_0" />
+        <ownedEnd xmi:id="lm_assoc_17_0_b" xmi:type="uml:Property" type="lm_uc_17" association="lm_assoc_17_0" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_18_0" xmi:type="uml:Association" memberEnd="lm_assoc_18_0_a lm_assoc_18_0_b">
+        <ownedEnd xmi:id="lm_assoc_18_0_a" xmi:type="uml:Property" type="lm_actor_0" association="lm_assoc_18_0" />
+        <ownedEnd xmi:id="lm_assoc_18_0_b" xmi:type="uml:Property" type="lm_uc_18" association="lm_assoc_18_0" />
+      </packagedElement>
+      <packagedElement xmi:id="lm_assoc_19_0" xmi:type="uml:Association" memberEnd="lm_assoc_19_0_a lm_assoc_19_0_b">
+        <ownedEnd xmi:id="lm_assoc_19_0_a" xmi:type="uml:Property" type="lm_actor_0" association="lm_assoc_19_0" />
+        <ownedEnd xmi:id="lm_assoc_19_0_b" xmi:type="uml:Property" type="lm_uc_19" association="lm_assoc_19_0" />
+      </packagedElement>
+    </packagedElement>
+  </uml:Model>
+</xmi:XMI>

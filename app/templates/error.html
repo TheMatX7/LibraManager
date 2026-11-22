@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}{{ code }} · LibraManager{% endblock %}
+{% block content %}
+<section class="error-state panel">
+  <span class="eyebrow">{{ code }}</span>
+  <h1>{{ title }}</h1>
+  <p>{{ message }}</p>
+  <div class="form-actions">
+    <a class="button primary" href="{{ url_for('web.dashboard') if current_user else url_for('web.login') }}">Wróć do aplikacji</a>
+    <a class="button secondary" href="{{ url_for('web.catalog') if current_user else url_for('web.login') }}">Katalog</a>
+  </div>
+</section>
+{% endblock %}

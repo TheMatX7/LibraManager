@@ -1,0 +1,432 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xmi:XMI xmlns:uml="http://schema.omg.org/spec/UML/2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1">
+  <uml:Model xmi:id="model" name="LibraManager">
+    <packagedElement xmi:id="type_I" name="Integer" xmi:type="uml:PrimitiveType" />
+    <packagedElement xmi:id="type_S" name="String" xmi:type="uml:PrimitiveType" />
+    <packagedElement xmi:id="type_B" name="Boolean" xmi:type="uml:PrimitiveType" />
+    <packagedElement xmi:id="type_D" name="DateTime" xmi:type="uml:PrimitiveType" />
+    <packagedElement xmi:id="type_N" name="Decimal" xmi:type="uml:PrimitiveType" />
+    <packagedElement xmi:id="User" name="User" xmi:type="uml:Class">
+      <ownedAttribute xmi:id="User_id" name="id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="User_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="User_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="User_username" name="username" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="User_username_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="User_username_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="User_email" name="email" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="User_email_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="User_email_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="User_password_hash" name="password_hash" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="User_password_hash_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="User_password_hash_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="User_role" name="role" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="User_role_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="User_role_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="User_is_active" name="is_active" type="type_B" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="User_is_active_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="User_is_active_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="User_created_at" name="created_at" type="type_D" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="User_created_at_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="User_created_at_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:id="Reader" name="Reader" xmi:type="uml:Class">
+      <ownedAttribute xmi:id="Reader_id" name="id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Reader_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Reader_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Reader_user_id" name="user_id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Reader_user_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Reader_user_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Reader_card_number" name="card_number" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Reader_card_number_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Reader_card_number_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Reader_first_name" name="first_name" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Reader_first_name_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Reader_first_name_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Reader_last_name" name="last_name" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Reader_last_name_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Reader_last_name_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Reader_phone" name="phone" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Reader_phone_l" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Reader_phone_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Reader_registered_at" name="registered_at" type="type_D" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Reader_registered_at_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Reader_registered_at_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:id="Category" name="Category" xmi:type="uml:Class">
+      <ownedAttribute xmi:id="Category_id" name="id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Category_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Category_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Category_name" name="name" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Category_name_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Category_name_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Category_description" name="description" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Category_description_l" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Category_description_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:id="Book" name="Book" xmi:type="uml:Class">
+      <ownedAttribute xmi:id="Book_id" name="id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Book_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Book_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Book_isbn" name="isbn" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Book_isbn_l" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Book_isbn_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Book_title" name="title" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Book_title_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Book_title_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Book_description" name="description" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Book_description_l" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Book_description_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Book_publisher" name="publisher" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Book_publisher_l" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Book_publisher_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Book_publication_year" name="publication_year" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Book_publication_year_l" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Book_publication_year_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Book_category_id" name="category_id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Book_category_id_l" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Book_category_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Book_is_archived" name="is_archived" type="type_B" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Book_is_archived_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Book_is_archived_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Book_created_at" name="created_at" type="type_D" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Book_created_at_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Book_created_at_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:id="Author" name="Author" xmi:type="uml:Class">
+      <ownedAttribute xmi:id="Author_id" name="id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Author_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Author_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Author_first_name" name="first_name" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Author_first_name_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Author_first_name_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Author_last_name" name="last_name" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Author_last_name_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Author_last_name_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:id="BookAuthor" name="BookAuthor" xmi:type="uml:Class">
+      <ownedAttribute xmi:id="BookAuthor_book_id" name="book_id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="BookAuthor_book_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="BookAuthor_book_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="BookAuthor_author_id" name="author_id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="BookAuthor_author_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="BookAuthor_author_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:id="Copy" name="Copy" xmi:type="uml:Class">
+      <ownedAttribute xmi:id="Copy_id" name="id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Copy_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Copy_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Copy_book_id" name="book_id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Copy_book_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Copy_book_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Copy_inventory_number" name="inventory_number" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Copy_inventory_number_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Copy_inventory_number_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Copy_status" name="status" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Copy_status_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Copy_status_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Copy_added_at" name="added_at" type="type_D" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Copy_added_at_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Copy_added_at_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:id="Loan" name="Loan" xmi:type="uml:Class">
+      <ownedAttribute xmi:id="Loan_id" name="id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Loan_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Loan_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Loan_copy_id" name="copy_id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Loan_copy_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Loan_copy_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Loan_reader_id" name="reader_id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Loan_reader_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Loan_reader_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Loan_borrowed_at" name="borrowed_at" type="type_D" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Loan_borrowed_at_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Loan_borrowed_at_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Loan_due_date" name="due_date" type="type_D" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Loan_due_date_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Loan_due_date_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Loan_returned_at" name="returned_at" type="type_D" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Loan_returned_at_l" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Loan_returned_at_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Loan_status" name="status" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Loan_status_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Loan_status_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:id="Reservation" name="Reservation" xmi:type="uml:Class">
+      <ownedAttribute xmi:id="Reservation_id" name="id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Reservation_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Reservation_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Reservation_book_id" name="book_id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Reservation_book_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Reservation_book_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Reservation_reader_id" name="reader_id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Reservation_reader_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Reservation_reader_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Reservation_reserved_at" name="reserved_at" type="type_D" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Reservation_reserved_at_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Reservation_reserved_at_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Reservation_expires_at" name="expires_at" type="type_D" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Reservation_expires_at_l" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Reservation_expires_at_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Reservation_status" name="status" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Reservation_status_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Reservation_status_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:id="Fine" name="Fine" xmi:type="uml:Class">
+      <ownedAttribute xmi:id="Fine_id" name="id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Fine_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Fine_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Fine_loan_id" name="loan_id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Fine_loan_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Fine_loan_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Fine_amount" name="amount" type="type_N" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Fine_amount_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Fine_amount_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Fine_paid_amount" name="paid_amount" type="type_N" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Fine_paid_amount_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Fine_paid_amount_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Fine_status" name="status" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Fine_status_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Fine_status_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Fine_created_at" name="created_at" type="type_D" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Fine_created_at_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Fine_created_at_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:id="Payment" name="Payment" xmi:type="uml:Class">
+      <ownedAttribute xmi:id="Payment_id" name="id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Payment_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Payment_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Payment_fine_id" name="fine_id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Payment_fine_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Payment_fine_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Payment_amount" name="amount" type="type_N" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Payment_amount_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Payment_amount_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Payment_method" name="method" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Payment_method_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Payment_method_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Payment_paid_at" name="paid_at" type="type_D" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Payment_paid_at_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Payment_paid_at_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:id="AuditLog" name="AuditLog" xmi:type="uml:Class">
+      <ownedAttribute xmi:id="AuditLog_id" name="id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="AuditLog_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="AuditLog_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="AuditLog_user_id" name="user_id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="AuditLog_user_id_l" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="AuditLog_user_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="AuditLog_action" name="action" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="AuditLog_action_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="AuditLog_action_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="AuditLog_description" name="description" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="AuditLog_description_l" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="AuditLog_description_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="AuditLog_created_at" name="created_at" type="type_D" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="AuditLog_created_at_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="AuditLog_created_at_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:id="Setting" name="Setting" xmi:type="uml:Class">
+      <ownedAttribute xmi:id="Setting_id" name="id" type="type_I" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Setting_id_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Setting_id_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Setting_key" name="key" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Setting_key_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Setting_key_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Setting_value" name="value" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Setting_value_l" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Setting_value_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+      <ownedAttribute xmi:id="Setting_description" name="description" type="type_S" visibility="private" xmi:type="uml:Property">
+        <lowerValue xmi:id="Setting_description_l" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="Setting_description_u" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:id="assoc0" name="User_Reader" memberEnd="assoc0a assoc0b" xmi:type="uml:Association">
+      <ownedEnd xmi:id="assoc0a" type="User" association="assoc0" name="user" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc0al" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc0au" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+      <ownedEnd xmi:id="assoc0b" type="Reader" association="assoc0" name="reader" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc0bl" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc0bu" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:id="assoc1" name="User_AuditLog" memberEnd="assoc1a assoc1b" xmi:type="uml:Association">
+      <ownedEnd xmi:id="assoc1a" type="User" association="assoc1" name="user" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc1al" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc1au" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+      <ownedEnd xmi:id="assoc1b" type="AuditLog" association="assoc1" name="auditlog" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc1bl" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc1bu" value="*" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:id="assoc2" name="Category_Book" memberEnd="assoc2a assoc2b" xmi:type="uml:Association">
+      <ownedEnd xmi:id="assoc2a" type="Category" association="assoc2" name="category" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc2al" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc2au" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+      <ownedEnd xmi:id="assoc2b" type="Book" association="assoc2" name="book" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc2bl" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc2bu" value="*" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:id="assoc3" name="Book_BookAuthor" memberEnd="assoc3a assoc3b" xmi:type="uml:Association">
+      <ownedEnd xmi:id="assoc3a" type="Book" association="assoc3" name="book" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc3al" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc3au" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+      <ownedEnd xmi:id="assoc3b" type="BookAuthor" association="assoc3" name="bookauthor" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc3bl" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc3bu" value="*" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:id="assoc4" name="Author_BookAuthor" memberEnd="assoc4a assoc4b" xmi:type="uml:Association">
+      <ownedEnd xmi:id="assoc4a" type="Author" association="assoc4" name="author" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc4al" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc4au" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+      <ownedEnd xmi:id="assoc4b" type="BookAuthor" association="assoc4" name="bookauthor" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc4bl" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc4bu" value="*" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:id="assoc5" name="Book_Copy" memberEnd="assoc5a assoc5b" xmi:type="uml:Association">
+      <ownedEnd xmi:id="assoc5a" type="Book" association="assoc5" name="book" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc5al" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc5au" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+      <ownedEnd xmi:id="assoc5b" type="Copy" association="assoc5" name="copy" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc5bl" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc5bu" value="*" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:id="assoc6" name="Copy_Loan" memberEnd="assoc6a assoc6b" xmi:type="uml:Association">
+      <ownedEnd xmi:id="assoc6a" type="Copy" association="assoc6" name="copy" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc6al" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc6au" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+      <ownedEnd xmi:id="assoc6b" type="Loan" association="assoc6" name="loan" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc6bl" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc6bu" value="*" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:id="assoc7" name="Reader_Loan" memberEnd="assoc7a assoc7b" xmi:type="uml:Association">
+      <ownedEnd xmi:id="assoc7a" type="Reader" association="assoc7" name="reader" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc7al" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc7au" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+      <ownedEnd xmi:id="assoc7b" type="Loan" association="assoc7" name="loan" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc7bl" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc7bu" value="*" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:id="assoc8" name="Reader_Reservation" memberEnd="assoc8a assoc8b" xmi:type="uml:Association">
+      <ownedEnd xmi:id="assoc8a" type="Reader" association="assoc8" name="reader" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc8al" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc8au" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+      <ownedEnd xmi:id="assoc8b" type="Reservation" association="assoc8" name="reservation" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc8bl" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc8bu" value="*" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:id="assoc9" name="Book_Reservation" memberEnd="assoc9a assoc9b" xmi:type="uml:Association">
+      <ownedEnd xmi:id="assoc9a" type="Book" association="assoc9" name="book" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc9al" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc9au" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+      <ownedEnd xmi:id="assoc9b" type="Reservation" association="assoc9" name="reservation" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc9bl" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc9bu" value="*" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:id="assoc10" name="Loan_Fine" memberEnd="assoc10a assoc10b" xmi:type="uml:Association">
+      <ownedEnd xmi:id="assoc10a" type="Loan" association="assoc10" name="loan" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc10al" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc10au" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+      <ownedEnd xmi:id="assoc10b" type="Fine" association="assoc10" name="fine" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc10bl" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc10bu" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:id="assoc11" name="Fine_Payment" memberEnd="assoc11a assoc11b" xmi:type="uml:Association">
+      <ownedEnd xmi:id="assoc11a" type="Fine" association="assoc11" name="fine" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc11al" value="1" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc11au" value="1" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+      <ownedEnd xmi:id="assoc11b" type="Payment" association="assoc11" name="payment" xmi:type="uml:Property">
+        <lowerValue xmi:id="assoc11bl" value="0" xmi:type="uml:LiteralInteger" />
+        <upperValue xmi:id="assoc11bu" value="*" xmi:type="uml:LiteralUnlimitedNatural" />
+      </ownedEnd>
+    </packagedElement>
+  </uml:Model>
+</xmi:XMI>

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Edycja · LibraManager{% endblock %}
+{% block content %}
+<div class="page-heading compact-heading">
+  <div>
+    <span class="eyebrow">ZARZĄDZANIE DANYMI</span>
+    <h1>{% if kind == 'author' %}Edytuj autora{% elif kind == 'category' %}Edytuj kategorię{% elif kind == 'copy' %}Edytuj egzemplarz{% elif kind == 'reader' %}Edytuj czytelnika{% else %}Edytuj użytkownika{% endif %}</h1>
+    <p>Zmiany są walidowane przez warstwę Services.</p>
+  </div>
+</div>
+<section class="detail-grid">
+  <form method="post" class="panel form-grid">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    {% if kind == 'author' %}
+      <label>Imię<input name="first_name" value="{{ item.first_name }}" required></label>
+      <label>Nazwisko<input name="last_name" value="{{ item.last_name }}" required></label>
+    {% elif kind == 'category' %}
+      <label class="wide">Nazwa<input name="name" value="{{ item.name }}" required></label>
+      <label class="wide">Opis<textarea name="description">{{ item.description or '' }}</textarea></label>
+    {% elif kind == 'copy' %}
+      <label class="wide">Numer inwentarzowy<input name="inventory_number" value="{{ item.inventory_number }}" required></label>
+      <p class="wide">Książka: <strong>{{ item.book.title }}</strong>; bieżący status: <strong>{{ item.status }}</strong>.</p>
+    {% elif kind == 'reader' %}
+      <label>Numer karty<input value="{{ item.card_number }}" disabled></label>
+      <label>Imię<input name="first_name" value="{{ item.first_name }}" required></label>
+      <label>Nazwisko<input name="last_name" value="{{ item.last_name }}" required></label>
+      <label>Telefon<input name="phone" value="{{ item.phone or '' }}"></label>
+    {% else %}
+      <label>Login<input value="{{ item.username }}" disabled></label>
+      <label>E-mail<input value="{{ item.email }}" disabled></label>
+      <label class="wide">Rola<select name="role">
+        {% for role in ['ADMIN','LIBRARIAN','READER'] %}<option value="{{ role }}" {% if item.role == role %}selected{% endif %}>{{ role }}</option>{% endfor %}
+      </select></label>
+    {% endif %}
+    <div class="form-actions wide">
+      <a class="button secondary" href="{% if kind == 'author' %}{{ url_for('web.authors') }}{% elif kind == 'category' %}{{ url_for('web.categories') }}{% elif kind == 'copy' %}{{ url_for('web.copies') }}{% elif kind == 'reader' %}{{ url_for('web.readers') }}{% else %}{{ url_for('web.users') }}{% endif %}">Wróć</a>
+      <button class="button primary" type="submit">Zapisz zmiany</button>
+    </div>
+  </form>
+  {% if kind == 'copy' %}
+    <form method="post" class="panel form-grid">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="action" value="status">
+      <h2 class="wide">Status egzemplarza</h2>
+      <label class="wide">Nowy status<select name="status">{% for status in statuses %}<option value="{{ status }}">{{ status }}</option>{% endfor %}</select></label>
+      <div class="form-actions wide"><button class="button secondary" type="submit">Zmień status</button></div>
+    </form>
+  {% endif %}
+  {% if kind == 'user' %}
+    <form method="post" class="panel form-grid">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <input type="hidden" name="action" value="password">
+      <h2 class="wide">Reset hasła</h2>
+      <label class="wide">Nowe hasło<input name="new_password" type="password" minlength="12" maxlength="128" required></label>
+      <div class="form-actions wide"><button class="button secondary" type="submit">Zresetuj hasło</button></div>
+    </form>
+  {% endif %}
+</section>
+{% endblock %}
