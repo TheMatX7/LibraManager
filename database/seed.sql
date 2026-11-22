@@ -1,0 +1,4 @@
+-- LibraManager demonstration data
+-- Use: python run.py --seed-demo
+-- Demo accounts are generated with random passwords.
+-- Run only on an empty database.
